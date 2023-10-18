@@ -1,0 +1,33 @@
+[
+    {
+      "id": "1",
+      "name": "Apple",
+      "image": "https://i.ibb.co/5LTTLzf/mac-cosmetic-png-logo-6129.png"
+    },
+    {
+      "id": "2",
+      "name": "Samsung",
+      "image": "https://i.ibb.co/ZgkXpRk/samsung-logo-png-1294.png"
+    },
+    {
+      "id": "3",
+      "name": "Sony",
+      "image": "https://i.ibb.co/9hrWh68/sony-logo-3074.png"
+    },
+    {
+      "id": "4",
+      "name": "Google",
+      "image": "https://i.ibb.co/3rwNScZ/google-logo-history-png-2609.png"
+    },
+    {
+      "id": "5",
+      "name": "Intel",
+      "image": "https://i.ibb.co/rwmj898/intel-png-logo-4130.png"
+    },
+    {
+      "id": "6",
+      "name": "Lenovo",
+      "image": "https://i.ibb.co/MZ2mMb0/red-logo-png-1149.png"
+    }
+]
+  
