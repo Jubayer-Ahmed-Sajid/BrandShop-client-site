@@ -12,6 +12,7 @@ import MyCart from './Pages/MyCart/MyCart';
 import Login from './Pages/Auth/Login/Login';
 import Registration from './Pages/Auth/Registration/Registration';
 import AuthProvider from './AuthProvider/AuthProvider';
+import Product from './Components/Product';
 
 
 
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
       {
         path:'/registration',
         element:<Registration></Registration>
+      },
+      {
+        path:'/product/:id',
+        element:<Product></Product>,
+        loader:({params})=> fetch(`http://localhost:5000/featured/${params.id}`)
       }
     ]
   },

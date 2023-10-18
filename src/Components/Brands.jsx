@@ -13,7 +13,7 @@ const Brands = () => {
     },[])
     return (
         <div>
-            <div className="flex items-center justify-between bg-white p-4">
+            <div className="md:flex justify-around items-center rounded-lg gap-4 bg-white p-4">
                 {
                     brands?.map(brand => <Brand key={brand.id} brand={brand}></Brand>)
 
