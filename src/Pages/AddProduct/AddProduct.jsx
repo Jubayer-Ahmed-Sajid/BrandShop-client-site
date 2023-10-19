@@ -5,11 +5,12 @@ const AddProduct = () => {
         const form = e.target;
         const image = form.image.value;
         const name = form.name.value;
+        const brand_name = form.brand_name.value;
         const type = form.type.value;
         const price = form.price.value;
         const description = form.description.value;
         const rating = form.rating.value;
-        const product = { image, name, type, price, description, rating }
+        const product = { image, name,brand_name, type, price, description, rating }
         fetch('http://localhost:5000/addedProducts', {
             method: 'POST',
             headers: {
@@ -42,12 +43,12 @@ const AddProduct = () => {
                     <div className="w-full">
 
                         <label className="label mb-2">Brand Name</label>
-                        <input type="text" name="name" placeholder="Enter Brand Name" className="input input-bordered input-primary w-full " />
+                        <input required type="text" name="brand_name" placeholder="Enter Brand Name" className="input input-bordered input-primary w-full " />
                     </div>
                     <div className=" w-full">
 
                         <label className="label mb-2">Name</label>
-                        <input type="text" name="type" placeholder="Name" className="input input-bordered input-primary w-full " />
+                        <input required type="text" name="name" placeholder="Name" className="input input-bordered input-primary w-full " />
                     </div>
                 </div>
                 <div className="flex w-full gap-4 px-8">
@@ -55,32 +56,34 @@ const AddProduct = () => {
                     <div className="w-full">
 
                         <label className="label mb-2">Type</label>
-                        <input type="text" name="type" placeholder="$price" className="input input-bordered input-primary w-full " />
+                        <input required type="text" name="type" placeholder="Type" className="input input-bordered input-primary w-full " />
                     </div>
                     <div className="w-full">
 
                         <label className="label mb-2">Price</label>
-                        <input type="text" name="price" placeholder="$price" className="input input-bordered input-primary w-full " />
+                        <input required type="text" name="price" placeholder="$price" className="input input-bordered input-primary w-full " />
                     </div>
                 </div>
                 <div className="flex w-full gap-4 px-8">
                     <div className="w-full">
 
                         <label className="label mb-2">Rating</label>
-                        <input type="text" name="rating" placeholder="Rating" className="input input-bordered input-primary w-full " />
+                        <input required type="text" name="rating" placeholder="Rating" className="input input-bordered input-primary w-full " />
                     </div>
                     <div className=" w-full">
 
                         <label className="label mb-2">Short description</label>
-                        <input type="text" name="description" placeholder="Product description" className="input input-bordered input-primary w-full " />
+                        <input  required type="text" name="description" placeholder="Product description" className="input input-bordered input-primary w-full " />
                     </div>
                 </div>
                 <div className="w-full px-8">
 
                     <label className="label mb-2">Image</label>
-                    <input type="url" name="image" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
+                    <input required type="url" name="image" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
                 </div>
+                <div className="px-8">
                 <input type="submit" className="btn btn-primary w-full my-4" value='Add Product' name="" id="" />
+                </div>
             </form>
         </div>
     );

@@ -17,7 +17,6 @@ const Featured = () => {
     
         fetchData();
     }, []);
-    console.log(products)
 
     return (
         <div>

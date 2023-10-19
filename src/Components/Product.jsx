@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 
 const Product = () => {
-    const product = useLoaderData()
+    const product = useLoaderData('')
+    console.log(product)
 
     return (
         <div>
-            <h2>{product.name}</h2>
+            <h2>Product{product.name}</h2>
         </div>
     );
 };

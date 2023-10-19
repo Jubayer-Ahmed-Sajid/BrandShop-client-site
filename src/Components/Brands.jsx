@@ -9,8 +9,8 @@ const Brands = () => {
         .then(data => {
             setBrands(data)
         })
-        console.log(brands)
     },[])
+
     return (
         <div>
             <div className="md:flex justify-around items-center rounded-lg gap-4 bg-white p-4">
