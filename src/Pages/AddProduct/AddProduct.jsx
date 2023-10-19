@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 const AddProduct = () => {
-    const handleAdd =(e)=>{
+    const handleAdd = (e) => {
         e.preventDefault()
         const form = e.target;
         const image = form.image.value;
@@ -9,24 +9,24 @@ const AddProduct = () => {
         const price = form.price.value;
         const description = form.description.value;
         const rating = form.rating.value;
-        const product = {image,name,type,price,description,rating}
-        fetch('http://localhost:5000/addedProducts',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        const product = { image, name, type, price, description, rating }
+        fetch('http://localhost:5000/addedProducts', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(product)
+            body: JSON.stringify(product)
         })
-        .then(res => res.json)
-        .then(data => {
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Product added successfully',
-                showConfirmButton: false,
-                timer: 2500
+            .then(res => res.json)
+            .then(() => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Product added successfully',
+                    showConfirmButton: true,
+                    timer: 2500
+                })
             })
-        })
     }
     return (
         <div>
@@ -35,44 +35,50 @@ const AddProduct = () => {
             <form onSubmit={handleAdd}>
 
                 <div className="flex w-full gap-4 px-8">
-                    
-                    
+
+
                 </div>
                 <div className="flex w-full gap-4 px-8">
                     <div className="w-full">
 
                         <label className="label mb-2">Brand Name</label>
-                        <input type="text" name="name" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
+                        <input type="text" name="name" placeholder="Enter Brand Name" className="input input-bordered input-primary w-full " />
                     </div>
                     <div className=" w-full">
 
-                        <label className="label mb-2">Type</label>
-                        <input type="text" name="type" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
+                        <label className="label mb-2">Name</label>
+                        <input type="text" name="type" placeholder="Name" className="input input-bordered input-primary w-full " />
                     </div>
                 </div>
                 <div className="flex w-full gap-4 px-8">
+
+                    <div className="w-full">
+
+                        <label className="label mb-2">Type</label>
+                        <input type="text" name="type" placeholder="$price" className="input input-bordered input-primary w-full " />
+                    </div>
                     <div className="w-full">
 
                         <label className="label mb-2">Price</label>
-                        <input type="text" name="price" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
-                    </div>
-                    <div className=" w-full">
-
-                        <label className="label mb-2">Short description</label>
-                        <input type="text" name="description" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
+                        <input type="text" name="price" placeholder="$price" className="input input-bordered input-primary w-full " />
                     </div>
                 </div>
                 <div className="flex w-full gap-4 px-8">
                     <div className="w-full">
 
                         <label className="label mb-2">Rating</label>
-                        <input type="text" name="rating" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
+                        <input type="text" name="rating" placeholder="Rating" className="input input-bordered input-primary w-full " />
                     </div>
-                    <div className="w-full">
+                    <div className=" w-full">
 
-                        <label className="label mb-2">Image</label>
-                        <input type="url" name="image" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
+                        <label className="label mb-2">Short description</label>
+                        <input type="text" name="description" placeholder="Product description" className="input input-bordered input-primary w-full " />
                     </div>
+                </div>
+                <div className="w-full px-8">
+
+                    <label className="label mb-2">Image</label>
+                    <input type="url" name="image" placeholder="Enter your image link" className="input input-bordered input-primary w-full " />
                 </div>
                 <input type="submit" className="btn btn-primary w-full my-4" value='Add Product' name="" id="" />
             </form>

@@ -13,6 +13,7 @@ import Login from './Pages/Auth/Login/Login';
 import Registration from './Pages/Auth/Registration/Registration';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Product from './Components/Product';
+import BrandProducts from './Components/BrandProducts/BrandProducts';
 
 
 
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
         path:'/product/:id',
         element:<Product></Product>,
         loader:({params})=> fetch(`http://localhost:5000/featured/${params.id}`)
+      },
+      {
+        path:'/brand/:name',
+        element:<BrandProducts></BrandProducts>,
+        loader:({params}) => fetch(`http://localhost:5000/addedProducts/${params.name}`)
+        
       }
     ]
   },

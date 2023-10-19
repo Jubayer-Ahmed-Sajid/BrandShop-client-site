@@ -57,11 +57,11 @@ const Navbar = () => {
                             <img src={user.photoURL} />
                         </div>
                     </label>
-                    <a className="btn" onClick={handleLogout}>Logout</a>
+                    <button className="btn" onClick={handleLogout}>Logout</button>
                 </div> :
                     <Link to='/login'>
 
-                        <a className="btn">Login</a>
+                        <button className="btn">Login</button>
                     </Link>
             }
 
