@@ -1,5 +1,6 @@
 import Brands from "../../Components/Brands";
 import Featured from "../../Components/Featured";
+import NewCollection from "../../Components/NewCollection";
 import Banner from "./Header/Banner";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
            </div>
             </div>
             <Featured></Featured>
+            <NewCollection></NewCollection>
             
         </div>
     );
