@@ -31,13 +31,13 @@ const MyCart = () => {
 
 
     return (
-        <div className="grid md:grid-cols-3 gap-6 border-2 p-8 border-blue-800 rounded-lg">
+        <div className="grid md:grid-cols-3 gap-6 border-2 my-12 p-8 border-blue-800 rounded-lg">
           { carts.length ==0 ? (
             <div className="col-span-4 md:min-h-[200px]  flex items-center justify-center font-bold text-3xl">
               <h2>You do not have any product in the cart</h2>
             </div>
           ) : (
-            carts?.map((cartProduct) => (
+            carts.map((cartProduct) => (
               <div key={cartProduct._id} className="card transition shadow-md p-4 duration-300 ease-in-out transform hover:bg-white hover:scale-105 flex justify-between">
                 <p className="text-[#999999] mb-4 font-bold text-xl">{cartProduct.type}</p>
                 <h2 className="mb-8 font-bold">{cartProduct.name}</h2>

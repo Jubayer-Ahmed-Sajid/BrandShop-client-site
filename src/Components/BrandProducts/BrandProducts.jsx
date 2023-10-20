@@ -6,7 +6,7 @@ const BrandProducts = () => {
     // const poructs = useLoaderData()
     const products = useLoaderData()
     return (
-        <div className="grid md:grid-cols-4 gap-12 border-2 border-blue-800 rounded-lg  ">
+        <div className="grid md:grid-cols-4 gap-4 my-12 border-2 border-blue-800 rounded-lg  ">
            {
             products?.map(product => <BrandProduct key={product._id} product={product}></BrandProduct>)
            }
