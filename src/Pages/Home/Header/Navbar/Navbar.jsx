@@ -3,8 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-    const { user, signingOut } = useContext(AuthContext)
-    const {email}= user;
+    const { user, signingOut, loading } = useContext(AuthContext)
+    if (loading) {
+        return <span className="loading loading-spinner text-error"></span>
+    }
     const handleLogout = () => {
         signingOut()
             .then(() => {
@@ -14,6 +16,7 @@ const Navbar = () => {
                 console.error(error)
             })
     }
+
     const navLink =
         <>
 
@@ -24,7 +27,9 @@ const Navbar = () => {
                 <NavLink to='addProduct'> Add Product </NavLink>
             </li>
             <li>
-                <NavLink to={`/myCart/${email}`}>My Product</NavLink>
+                <NavLink to={user ? `/myCart/${user.email}` : '/myCart/:email'}>
+                    My Product
+                </NavLink>
             </li>
             <li>
                 <NavLink to='login'>Login </NavLink>
@@ -69,6 +74,7 @@ const Navbar = () => {
             </div>
         </div>
     );
+
 };
 
 export default Navbar;

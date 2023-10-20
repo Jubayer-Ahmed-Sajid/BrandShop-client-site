@@ -5,7 +5,6 @@ import Banner from "./Header/Banner";
 const Home = () => {
     return (
         <div>
-            <h2>This is home</h2>
             <div className="md:relative">
             <Banner></Banner>
            <div className="md:absolute -bottom-36 w-[90%] mx-[5%]">

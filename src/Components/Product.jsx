@@ -2,7 +2,7 @@ import {  useLoaderData } from "react-router-dom";
 import {BsCart2} from 'react-icons/bs'
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import Swal from "sweetalert2";
 const Product = () => {
     const {user} = useContext(AuthContext) 
     const {email} = user;
@@ -23,11 +23,15 @@ const Product = () => {
         .then(data => {
             console.log(data)
         })
-
+        Swal.fire(
+            'Added!',
+            'Your item has been Added to Cart.',
+            'success'
+        )
 
     }
     return (
-        <div className="grid grid-cols-2 gap-4 mt-12">
+        <div className="grid md:grid-cols-2 gap-4 mt-12">
             <div className="bg-white flex items-center px-4 pb-8 border-r min-h-screen shadow-lg">
                 <img src={image} className="min-h-max " alt="" />
             </div>
