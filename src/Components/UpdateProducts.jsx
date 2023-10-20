@@ -1,11 +1,9 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProducts = () => {
-    const id = useParams();
     const loadedProduct = useLoaderData()
     const { image, name,brand_name, type, price, description, rating } = loadedProduct
-    console.log(id)
     const handleUpdate = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -24,9 +22,9 @@ const UpdateProducts = () => {
             },
             body: JSON.stringify(product)
         })
-            .then(res => res.json)
+            .then(res => res.json())
             .then((data) => {
-                console.log(data.deletedCount)
+                console.log(data)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',

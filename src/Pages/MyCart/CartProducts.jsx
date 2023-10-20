@@ -1,7 +1,21 @@
 import PropTypes from 'prop-types'
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const CartProducts = ({cartProduct}) => {
-    const {_id,image,brand_name,name,rating,price,type}=cartProduct;
+  const {user} = useContext(AuthContext)
+  const {email} = user
+    const {image,brand_name,name,rating,price,type}=cartProduct;
+    const handleDelete=()=>{
+        fetch(`http://localhost:5000/cart/${email}/${cartProduct._id}`,{
+          method:'DELETE',
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+        })
+        
+    }
   return (
     <div>
       <div className="card  transition duration-300 ease-in-out transform hover:bg-white hover:scale-105">
@@ -21,7 +35,7 @@ const CartProducts = ({cartProduct}) => {
                             </div>
                         </div>
                     <div className="flex justify-between gap-6 mt-4 mb-4">
-                        <button to={`/products/${name}/${_id}`} className="btn btn-primary">Details</button>
+                        <button onClick={handleDelete} className="btn btn-primary">Delete</button>
                         
                     </div>
 

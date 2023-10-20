@@ -1,17 +1,23 @@
 import {  useLoaderData } from "react-router-dom";
 import {BsCart2} from 'react-icons/bs'
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Product = () => {
-    const product = useLoaderData('')
-    console.log(product)
+    const {user} = useContext(AuthContext) 
+    const {email} = user;
+    const product = useLoaderData()
     const { image, name, brand_name, type, price, description, rating } = product
+    const productToInsert = {
+        image,name,brand_name,type,price,description,rating,email
+    }
     const handleAddToCart= () =>{
         fetch('http://localhost:5000/cart',{
             method:"POST",
             headers :{
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(product)
+            body: JSON.stringify(productToInsert)
         })
         .then(res => res.json())
         .then(data => {

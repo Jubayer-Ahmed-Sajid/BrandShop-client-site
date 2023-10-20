@@ -12,8 +12,6 @@ const Registration = () => {
     const navigate = useNavigate('');
     const [errors, setError] = useState('');
     const [successMessage, setSuccess] = useState('');
-    console.log(typeof (signUpWithGoogle))
-    console.log(createUser)
 
     const handleRegistration = e => {
 
@@ -23,7 +21,6 @@ const Registration = () => {
         const email = form.email.value;
         const url = form.url.value;
         const password = form.password.value;
-        console.log(name,email,url,password)
         if (password.length < 6) {
             return  Swal.fire({
                   position: 'top-end',

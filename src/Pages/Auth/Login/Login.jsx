@@ -6,9 +6,7 @@ import Swal from "sweetalert2";
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location.state)
     const {signIn} = useContext(AuthContext)
-    console.log(typeof (signIn))
     const handleSignIn =(e)=>{
         e.preventDefault()
         const form = e.target;

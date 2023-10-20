@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 
 const BrandProduct = ({product}) => {
     const {_id,image,brand_name,name,rating,price,type}=product;
-    console.log(type)
     return (
-        <div className="card  transition duration-300 ease-in-out transform hover:bg-white hover:scale-105">
-            <div  className=" border-r px-6 shadow-lg transition duration-300 ease-in-out transform hover:bg-white hover:scale-105 pt-4">
+            <div  className="flex flex-col justify-between  border-r px-6 shadow-lg transition duration-300 ease-in-out transform hover:bg-white   pt-4">
                         <p className="text-[#999999] mb-4 font-bold text-xl">{type}</p>
                         <h2 className="mb-8  font-bold">{name}</h2>
                         <img src={image} className="mx-auto h-24" alt="" />
@@ -22,14 +20,13 @@ const BrandProduct = ({product}) => {
                             </div>
                         </div>
                     <div className="flex justify-between gap-6 mt-4 mb-4">
-                        <Link to={`/products/${name}/${_id}`} className="btn btn-primary">Details</Link>
+                        <Link to={`/products/${brand_name}/${_id}`} className="btn btn-primary">Details</Link>
                         <Link to={`/product/${_id}`}>
                         <button className="btn btn-primary">Update</button>
                         </Link>
                     </div>
 
                     </div>
-            </div>
     );
 };
 BrandProduct.propTypes ={

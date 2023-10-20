@@ -4,6 +4,7 @@ import { AuthContext } from "../../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const { user, signingOut } = useContext(AuthContext)
+    const {email}= user;
     const handleLogout = () => {
         signingOut()
             .then(() => {
@@ -23,7 +24,7 @@ const Navbar = () => {
                 <NavLink to='addProduct'> Add Product </NavLink>
             </li>
             <li>
-                <NavLink to='myCart'>My Product</NavLink>
+                <NavLink to={`/myCart/${email}`}>My Product</NavLink>
             </li>
             <li>
                 <NavLink to='login'>Login </NavLink>

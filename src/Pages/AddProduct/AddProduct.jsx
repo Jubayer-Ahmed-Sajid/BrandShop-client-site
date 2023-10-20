@@ -18,8 +18,9 @@ const AddProduct = () => {
             },
             body: JSON.stringify(product)
         })
-            .then(res => res.json)
-            .then(() => {
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data)
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
