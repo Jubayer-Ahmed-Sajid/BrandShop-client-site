@@ -35,8 +35,8 @@ const UpdateProducts = () => {
             })
     }
     return (
-        <div>
-            <h2 className="text-center text-3xl my-8">Add Product</h2>
+        <div className="bg-[#fffdaf] my-8">
+            <h2 className="text-center text-3xl py-8">Update Product</h2>
 
             <form onSubmit={handleUpdate}>
 

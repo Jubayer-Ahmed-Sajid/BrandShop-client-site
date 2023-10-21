@@ -31,8 +31,8 @@ const AddProduct = () => {
             })
     }
     return (
-        <div>
-            <h2 className="text-center text-3xl my-8">Add Product</h2>
+        <div className="my-8 bg-[#fffdaf]">
+            <h2 className="text-center text-3xl py-8">Add Product</h2>
 
             <form onSubmit={handleAdd}>
 

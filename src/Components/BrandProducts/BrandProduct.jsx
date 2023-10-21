@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const BrandProduct = ({product}) => {
     const {_id,image,brand_name,name,rating,price,type}=product;
     return (
-            <div  className="flex flex-col justify-between  border-r px-6 shadow-lg transition duration-300 ease-in-out transform hover:bg-white   pt-4">
+            <div  className="flex flex-col justify-between  border-r px-4 shadow-lg transition duration-300 ease-in-out transform hover:bg-white hover:scale-105  pt-4">
                         <p className="text-[#999999] mb-4 font-bold text-xl">{type}</p>
                         <h2 className="mb-8  font-bold">{name}</h2>
                         <img src={image} className="mx-auto h-24" alt="" />
