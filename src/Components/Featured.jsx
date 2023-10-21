@@ -6,7 +6,7 @@ const Featured = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/featured');
+                const response = await fetch('https://assignment-10-server-eight-theta.vercel.app/featured');
                 const data = await response.json();
                 setProducts(data);
 

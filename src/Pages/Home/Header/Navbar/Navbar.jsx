@@ -27,8 +27,8 @@ const Navbar = () => {
                 <NavLink to='addProduct'> Add Product </NavLink>
             </li>
             <li>
-                <NavLink to={user ? `/myCart/${user.email}` : '/myCart/:email'}>
-                    My Product
+                <NavLink to='/myCart'>
+                    My Cart
                 </NavLink>
             </li>
             <li>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <div className="navbar-end">{
 
                 user ? <div className="gap-4 flex items-center">
-                    <p>{user.displayName}</p>
+                    <p className="hidden md:flex ">{user.displayName}</p>
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src={user.photoURL} />

@@ -11,7 +11,7 @@ const AddProduct = () => {
         const description = form.description.value;
         const rating = form.rating.value;
         const product = { image, name,brand_name, type, price, description, rating }
-        fetch('http://localhost:5000/addedProducts', {
+        fetch('https://assignment-10-server-eight-theta.vercel.app/addedProducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

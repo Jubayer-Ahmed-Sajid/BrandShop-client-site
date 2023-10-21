@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "another-authenticator"
-  }
+    "default": "assignment-10-e2f24",
+    "Assignment-10": "assignment-10-e2f24"
+  },
+  "targets": {},
+  "etags": {}
 }

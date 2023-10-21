@@ -6,12 +6,15 @@ import Swal from "sweetalert2";
 const MyCart = () => {
     const {user, loading } = useContext(AuthContext)
     const [carts ,setCartProduct] =useState(useLoaderData())
+    const myCarts = carts.filter(myCart => myCart.email == user.email)
+    console.log(myCarts)
+    
 
     if (loading) {
         return <span className="loading loading-spinner text-error"></span>
     }
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/cart/${user.email}/${id}`, {
+        fetch(`https://assignment-10-server-eight-theta.vercel.app/cart/${user.email}/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -37,7 +40,7 @@ const MyCart = () => {
               <h2>You do not have any product in the cart</h2>
             </div>
           ) : (
-            carts.map((cartProduct) => (
+            myCarts.map((cartProduct) => (
               <div key={cartProduct._id} className="card transition shadow-md p-4 duration-300 ease-in-out transform hover:bg-white hover:scale-105 flex justify-between">
                 <p className="text-[#999999] mb-4 font-bold text-xl">{cartProduct.type}</p>
                 <h2 className="mb-8 font-bold">{cartProduct.name}</h2>

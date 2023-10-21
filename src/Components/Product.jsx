@@ -12,7 +12,7 @@ const Product = () => {
         image,name,brand_name,type,price,description,rating,email
     }
     const handleAddToCart= () =>{
-        fetch('http://localhost:5000/cart',{
+        fetch('https://assignment-10-server-eight-theta.vercel.app/cart',{
             method:"POST",
             headers :{
                 'content-type': 'application/json'

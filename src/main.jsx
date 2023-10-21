@@ -36,9 +36,9 @@ const router = createBrowserRouter([
         </PrivateRoute>
       },
       {
-        path:'/myCart/:email',
+        path:'/myCart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/cart/${params.email}`)
+        loader:()=>fetch('https://assignment-10-server-eight-theta.vercel.app/cart')
       },
       {
         path:'/login',
@@ -51,23 +51,23 @@ const router = createBrowserRouter([
       {
         path:'/products/:name/:id',
         element:<PrivateRoute><Product></Product></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/addedProducts/${params.name}/${params.id}`)
+        loader:({params})=> fetch(`https://assignment-10-server-eight-theta.vercel.app/addedProducts/${params.name}/${params.id}`)
       },
       {
         path:'/brand/:name',
         element:<BrandProducts></BrandProducts>,
-        loader:({params}) => fetch(`http://localhost:5000/addedProducts/${params.name}`)
+        loader:({params}) => fetch(`https://assignment-10-server-eight-theta.vercel.app/addedProducts/${params.name}`)
         
       },
       {
         path:'/product/:id',
         element:<PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/addedProducts/${params.name}/${params.id}`)
+        loader:({params})=> fetch(`https://assignment-10-server-eight-theta.vercel.app/addedProducts/${params.name}/${params.id}`)
       },
       {
         path:'/products/:id',
         element:<PrivateRoute><FeaturedProduct></FeaturedProduct></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/featured/${params.id}`)
+        loader:({params})=> fetch(`https://assignment-10-server-eight-theta.vercel.app/featured/${params.id}`)
 
       }
     ]

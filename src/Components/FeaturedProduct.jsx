@@ -13,7 +13,7 @@ const FeaturedProduct = () => {
     }
     console.log(product)
     const handleAddToCart= () =>{
-        fetch('http://localhost:5000/cart',{
+        fetch('https://assignment-10-server-eight-theta.vercel.app/cart',{
             method:"POST",
             headers :{
                 'content-type': 'application/json'

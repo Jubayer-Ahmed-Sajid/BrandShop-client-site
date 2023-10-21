@@ -15,7 +15,7 @@ const UpdateProducts = () => {
         const description = form.description.value;
         const rating = form.rating.value;
         const product = { image, name,brand_name, type, price, description, rating }
-        fetch(`http://localhost:5000/addedProducts/${loadedProduct.brand_name}/${loadedProduct._id}`, {
+        fetch(`https://assignment-10-server-eight-theta.vercel.app/addedProducts/${loadedProduct.brand_name}/${loadedProduct._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
