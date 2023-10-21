@@ -17,6 +17,7 @@ import BrandProducts from './Components/BrandProducts/BrandProducts';
 import UpdateProducts from './Components/UpdateProducts';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import FeaturedProduct from './Components/FeaturedProduct';
+import ErrorPage from './Components/ErrorPage';
 
 
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:'/',
