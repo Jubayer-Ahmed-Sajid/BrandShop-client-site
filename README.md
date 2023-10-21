@@ -1,10 +1,10 @@
-# Product Cluster
+# Tech Cluster
 
-Welcome to Product Cluster! This is a brand website where you can find cluster of top branded technological products.
+Welcome to Tech Cluster! This is a brand website where you can find cluster of top branded technological products.
 
 ## Live Link
 
-Check out the live version of the website here: [Product Cluster](https://assignment-10-e2f24.web.app)
+Check out the live version of the website here: [Tech cluster](https://assignment-10-e2f24.web.app)
 
 ## Features
 
